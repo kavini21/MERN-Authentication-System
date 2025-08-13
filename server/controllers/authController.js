@@ -24,6 +24,7 @@ export const register = async (req, res) => {
         await user.save();
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+        res.cookie('token' , token)
 
     }catch(error){
         res.json({ success: false, message: error.message })
