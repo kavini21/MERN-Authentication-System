@@ -25,6 +25,10 @@ export const register = async (req, res) => {
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
         res.cookie('token' , token)
+        {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production'
+        });
 
     }catch(error){
         res.json({ success: false, message: error.message })
