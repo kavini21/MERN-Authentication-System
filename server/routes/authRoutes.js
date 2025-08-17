@@ -7,4 +7,4 @@ authRouter.post('/register',register);
 authRouter.post('/login',login);
 authRouter.post('/logout',logout);
 
-express default authRouter;
+export default authRouter;
