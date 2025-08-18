@@ -49,7 +49,7 @@ export const register = async (req, res) => {
         }
 
         try {
-            const user = awit userModel.findOne({email});
+            const user = await userModel.findOne({email});
 
             if(!user){
                 return res.json({success: false, message: 'Invalid email'})
